@@ -13,6 +13,7 @@ set path="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools
 perl Configure --release VC-WIN32 no-dso no-shared no-tests threads
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" configdata.pm
 perl -pi.bak -e "s/\/MT/\/MTd/gi" configdata.pm
+perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" configdata.pm
 perl -pi.bak -e "s/ -D\"NDEBUG\"/ /gi" configdata.pm
 perl -pi.bak -e "s/ -D\"UNICODE\"/ /gi" configdata.pm
 perl -pi.bak -e "s/ -D\"_UNICODE\"/ /gi" configdata.pm
@@ -21,6 +22,7 @@ perl -pi.bak -e "s/ \"_UNICODE\",/ /gi" configdata.pm
 del /F /Q "configdata.pm.bak" > nul
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" makefile
 perl -pi.bak -e "s/\/MT/\/MTd/gi" makefile
+perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" makefile
 perl -pi.bak -e "s/ -D\"NDEBUG\"/ /gi" makefile
 perl -pi.bak -e "s/ -D\"UNICODE\"/ /gi" makefile
 perl -pi.bak -e "s/ -D\"_UNICODE\"/ /gi" makefile
@@ -34,6 +36,7 @@ nmake distclean
 perl Configure --release VC-WIN32 no-dso no-shared no-tests threads
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" configdata.pm
 perl -pi.bak -e "s/\/MT/\/MTd/gi" configdata.pm
+perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" configdata.pm
 perl -pi.bak -e "s/ -D\"NDEBUG\"/ /gi" configdata.pm
 perl -pi.bak -e "s/ -D\"UNICODE\"/ /gi" configdata.pm
 perl -pi.bak -e "s/ -D\"_UNICODE\"/ /gi" configdata.pm
@@ -42,6 +45,7 @@ perl -pi.bak -e "s/ \"_UNICODE\",/ /gi" configdata.pm
 del /F /Q "configdata.pm.bak" > nul
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" makefile
 perl -pi.bak -e "s/\/MT/\/MTd/gi" makefile
+perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" makefile
 perl -pi.bak -e "s/ -D\"NDEBUG\"/ /gi" makefile
 perl -pi.bak -e "s/ -D\"UNICODE\"/ /gi" makefile
 perl -pi.bak -e "s/ -D\"_UNICODE\"/ /gi" makefile
