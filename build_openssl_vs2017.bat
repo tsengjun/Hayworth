@@ -21,6 +21,10 @@ perl -pi.bak -e "s/-D\"UNICODE\"//gi" configdata.pm
 perl -pi.bak -e "s/-D\"_UNICODE\"//gi" configdata.pm
 perl -pi.bak -e "s/\"UNICODE\",//gi" configdata.pm
 perl -pi.bak -e "s/\"_UNICODE\",//gi" configdata.pm
+perl -pi.bak -e "s/\'OPENSSL_NO_CRYPTO_MDEBUG\',/\'default\',/gi" configdata.pm
+perl -pi.bak -e "s/\"OPENSSL_NO_CRYPTO_MDEBUG\",//gi" configdata.pm
+perl -pi.bak -e "s/no-crypto-mdebug//gi" configdata.pm
+perl -pi.bak -e "s/no-crypto-mdebug-backtrace//gi" configdata.pm
 del /F /Q "configdata.pm.bak" > nul
 perl -pi.bak -e "s/\/MT/\/MTd/gi" makefile
 perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" makefile
@@ -33,6 +37,10 @@ perl -pi.bak -e "s/-D\"UNICODE\"//gi" makefile
 perl -pi.bak -e "s/-D\"_UNICODE\"//gi" makefile
 perl -pi.bak -e "s/\"UNICODE\",//gi" makefile
 perl -pi.bak -e "s/\"_UNICODE\",//gi" makefile
+perl -pi.bak -e "s/\'OPENSSL_NO_CRYPTO_MDEBUG\',/\'default\',/gi" makefile
+perl -pi.bak -e "s/\"OPENSSL_NO_CRYPTO_MDEBUG\",//gi" makefile
+perl -pi.bak -e "s/no-crypto-mdebug//gi" makefile
+perl -pi.bak -e "s/no-crypto-mdebug-backtrace//gi" makefile
 del /F /Q "makefile.bak" > nul
 
 nmake libclean
@@ -50,6 +58,10 @@ perl -pi.bak -e "s/-D\"UNICODE\"//gi" configdata.pm
 perl -pi.bak -e "s/-D\"_UNICODE\"//gi" configdata.pm
 perl -pi.bak -e "s/\"UNICODE\",//gi" configdata.pm
 perl -pi.bak -e "s/\"_UNICODE\",//gi" configdata.pm
+perl -pi.bak -e "s/\'OPENSSL_NO_CRYPTO_MDEBUG\',/\'default\',/gi" configdata.pm
+perl -pi.bak -e "s/\"OPENSSL_NO_CRYPTO_MDEBUG\",//gi" configdata.pm
+perl -pi.bak -e "s/no-crypto-mdebug//gi" configdata.pm
+perl -pi.bak -e "s/no-crypto-mdebug-backtrace//gi" configdata.pm
 del /F /Q "configdata.pm.bak" > nul
 perl -pi.bak -e "s/\/MT/\/MTd/gi" makefile
 perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" makefile
@@ -62,7 +74,12 @@ perl -pi.bak -e "s/-D\"UNICODE\"//gi" makefile
 perl -pi.bak -e "s/-D\"_UNICODE\"//gi" makefile
 perl -pi.bak -e "s/\"UNICODE\",//gi" makefile
 perl -pi.bak -e "s/\"_UNICODE\",//gi" makefile
+perl -pi.bak -e "s/\'OPENSSL_NO_CRYPTO_MDEBUG\',/\'default\',/gi" makefile
+perl -pi.bak -e "s/\"OPENSSL_NO_CRYPTO_MDEBUG\",//gi" makefile
+perl -pi.bak -e "s/no-crypto-mdebug//gi" makefile
+perl -pi.bak -e "s/no-crypto-mdebug-backtrace//gi" makefile
 
 del /F /Q "makefile.bak" > nul
 
 nmake build_libs
+
