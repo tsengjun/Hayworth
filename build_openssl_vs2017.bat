@@ -10,7 +10,7 @@ cd /d %CWD%
 set path="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\bin\Hostx86\x86";"C:\Program Files (x86)\NASM";"C:\Perl64\bin";%path%
 
 
-perl Configure --release VC-WIN32 no-dso no-shared no-tests threads
+perl Configure --release VC-WIN32 no-dso no-shared threads
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" configdata.pm
 perl -pi.bak -e "s/\/MT/\/MTd/gi" configdata.pm
 perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" configdata.pm
@@ -33,7 +33,7 @@ del /F /Q "makefile.bak" > nul
 nmake libclean
 nmake clean
 nmake distclean
-perl Configure --release VC-WIN32 no-dso no-shared no-tests threads
+perl Configure --release VC-WIN32 no-dso no-shared threads
 perl -pi.bak -e "s/ -DUNICODE -D_UNICODE/ /gi" configdata.pm
 perl -pi.bak -e "s/\/MT/\/MTd/gi" configdata.pm
 perl -pi.bak -e "s/\/O2/\/Od \/Ob0/gi" configdata.pm
